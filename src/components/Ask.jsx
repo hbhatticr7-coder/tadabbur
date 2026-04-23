@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { entries } from "../data/askIndex.js";
+import { verseOrder } from "../data/fatiha.js";
 import { findAnswer } from "../lib/askSearch.js";
 
 // Initial state: show the seed entry so the section reads as "full" on first
 // paint. Once the user asks something, we switch to their query's result.
 const INITIAL = entries[0];
+
+// Scope disclosure, kept in sync with the data so it can't drift.
+const scopeLabel = verseOrder.length === 1
+  ? `Al-Fātiḥa ${verseOrder[0]}`
+  : `Al-Fātiḥa ${verseOrder[0]}–${verseOrder[verseOrder.length - 1].split(":")[1]}`;
 
 export default function Ask() {
   const [draft, setDraft] = useState("");
@@ -58,7 +64,7 @@ export default function Ask() {
           </div>
 
           <p className="mt-3 font-body text-xs italic" style={{ color: "#7a6e5e" }}>
-            Our annotated library currently covers Al-Fātiḥa 1:1 — anything outside that will say so.
+            Our annotated library currently covers {scopeLabel} — anything outside that will say so.
           </p>
         </div>
       </div>
@@ -113,7 +119,7 @@ function NoMatchCard({ question }) {
         We don't have an annotated answer for this yet.
       </div>
       <div className="font-body text-sm leading-relaxed" style={{ color: "#4a4239" }}>
-        The current library covers Al-Fātiḥa 1:1 — the four words of the Basmala and the questions that open naturally around them. We'll only surface answers where we've read the sources and can cite them. Anything else, we say so plainly.
+        The current library covers {scopeLabel} and the questions that open naturally around each word. We'll only surface answers where we've read the sources and can cite them. Anything else, we say so plainly.
       </div>
     </div>
   );

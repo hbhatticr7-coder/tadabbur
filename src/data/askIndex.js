@@ -62,4 +62,45 @@ export const entries = [
       "al-Qurṭubī · al-Jāmiʿ li-Aḥkām al-Qurʾān",
     ],
   },
+  {
+    id: "hamd-vs-shukr",
+    tags: [
+      "hamd", "ḥamd", "shukr", "praise", "gratitude", "alhamdulillah",
+      "difference", "between", "distinguish",
+    ],
+    question: "What's the difference between ḥamd and shukr?",
+    answer: "Classical Arabic usage distinguishes them carefully. Shukr is gratitude tied to a received favor — it responds to something given. Ḥamd is praise owed to the excellence of the praised one, offered freely whether or not you personally received a benefit. Madḥ is a third word, praise for any quality, good or neutral. When the Quran opens with al-ḥamdu li-llāhi, it names a posture that is fuller than gratitude: acknowledgment of Allah's excellence as a standing truth, not a transaction.",
+    sources: [
+      "Ibn Kathīr · Tafsīr al-Qurʾān al-ʿAẓīm",
+      "Lane · Arabic-English Lexicon",
+    ],
+  },
+  {
+    id: "what-does-rabb-mean",
+    tags: [
+      "rabb", "lord", "sustainer", "master", "meaning",
+      "what does rabb mean", "rabbi", "lord of the worlds",
+    ],
+    question: "What does 'Rabb' mean when the Quran calls Allah rabbi l-ʿālamīn?",
+    answer: "The Arabic root r-b-b carries more than 'lord' in the English sense of owner or master. Rabb is the one who raises something up — a master who cultivates, a guardian who brings to maturity, a source from whom a thing originates. Ibn Kathīr summarizes three senses combined in the word: ownership, ongoing care, and origination. When the Quran says rabbi l-ʿālamīn, it affirms all three over every realm of creation, with no partner.",
+    sources: [
+      "Ibn Kathīr · Tafsīr al-Qurʾān al-ʿAẓīm",
+      "al-Ṭabarī · Jāmiʿ al-Bayān",
+      "Lane · Arabic-English Lexicon",
+    ],
+  },
+  {
+    id: "alamin-worlds",
+    tags: [
+      "alamin", "ʿālamīn", "worlds", "creation", "universe",
+      "lord of the worlds", "what are the worlds",
+    ],
+    question: "What are 'the worlds' (al-ʿālamīn) in 'Lord of the worlds'?",
+    answer: "ʿĀlam comes from the root ʿ-l-m, 'to know.' A world, in this sense, is a realm BY WHICH something is known — creation as the sign of its Maker. Classical tafsirs record two readings of the plural al-ʿālamīn. Some early scholars, noting that the -īn ending is ordinarily used for rational beings, took it to mean specifically humans and jinn. The majority reading, reported by Ibn Kathīr from Ibn ʿAbbās and others, is inclusive: every separate realm of creation — humans, jinn, angels, and every kind of created being.",
+    sources: [
+      "Ibn Kathīr · Tafsīr al-Qurʾān al-ʿAẓīm",
+      "al-Qurṭubī · al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "Lane · Arabic-English Lexicon",
+    ],
+  },
 ];

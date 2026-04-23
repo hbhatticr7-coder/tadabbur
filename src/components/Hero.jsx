@@ -1,18 +1,28 @@
 import { useState } from "react";
-import { words, rootMeanings, rootOccurrences, tafsir } from "../data/fatiha.js";
+import { verses, verseOrder, rootMeanings, rootOccurrences, tafsir } from "../data/fatiha.js";
 import WordStudy from "./WordStudy.jsx";
 import ScholarlyPanel from "./ScholarlyPanel.jsx";
 
 export default function Hero({ loaded }) {
-  const [activeWord, setActiveWord] = useState(2); // "ar-Raḥmān" by default
+  const [verseId, setVerseId] = useState("1:1");
+  const [activeWord, setActiveWord] = useState(2); // "ar-Raḥmān" on first load
   const [analysisOpen, setAnalysisOpen] = useState(false);
-  const current = words[activeWord];
+
+  const verse = verses[verseId];
+  const current = verse.words[activeWord];
+  const idx = verseOrder.indexOf(verseId);
+  const prevVerse = verseOrder[idx - 1];
+  const nextVerse = verseOrder[idx + 1];
+
+  const goToVerse = (id) => {
+    if (id) setVerseId(id);
+  };
 
   return (
     <section className="relative max-w-6xl mx-auto px-8 pt-24 pb-32">
       <div className={`mb-8 flex items-center justify-center lg:justify-start gap-4 font-body text-xs uppercase tracking-[0.3em] gilt ${loaded ? "reveal r-1" : "opacity-0"}`}>
         <span className="h-px w-10 bg-current" />
-        <span>verse for today · 21 Ramaḍān</span>
+        <span>Al-Fātiḥa · the opening surah</span>
       </div>
 
       <h1 className={`font-display text-5xl md:text-7xl leading-[0.95] tracking-tight mb-14 max-w-4xl mx-auto lg:mx-0 text-center lg:text-left ${loaded ? "reveal r-2" : "opacity-0"}`} style={{ fontWeight: 300 }}>
@@ -23,11 +33,11 @@ export default function Hero({ loaded }) {
       <div className={`grid lg:grid-cols-12 gap-12 items-start ${loaded ? "reveal r-3" : "opacity-0"}`}>
         <div className="lg:col-span-7">
           <div className="vellum p-10 md:p-14 relative" style={{ boxShadow: "0 1px 0 rgba(29,25,23,0.06), 0 30px 60px -30px rgba(29,25,23,0.25)" }}>
-            <div className="absolute top-4 left-4 font-body text-xs uppercase tracking-[0.3em] gilt">Al-Fātiḥa · 1:1</div>
-            <div className="absolute top-4 right-4 font-body text-xs tracking-wider" style={{ color: "#7a6e5e" }}>the opening</div>
+            <div className="absolute top-4 left-4 font-body text-xs uppercase tracking-[0.3em] gilt">Al-Fātiḥa · {verse.ref}</div>
+            <div className="absolute top-4 right-4 font-body text-xs tracking-wider" style={{ color: "#7a6e5e" }}>{verse.label}</div>
 
             <p dir="rtl" className="font-ar text-5xl md:text-6xl leading-[1.6] text-center mt-6 mb-10 ink">
-              {words.map((w, i) => (
+              {verse.words.map((w, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveWord(i)}
@@ -40,11 +50,33 @@ export default function Hero({ loaded }) {
             </p>
 
             <p className="font-display text-xl text-center italic mb-3" style={{ fontWeight: 400 }}>
-              "In the name of Allah, the Most Gracious, the Most Merciful."
+              "{verse.translation}"
             </p>
             <p className="font-body text-sm text-center" style={{ color: "#7a6e5e" }}>
               tap any word to open it
             </p>
+          </div>
+
+          <div className="mt-6 flex items-center justify-between font-body text-sm">
+            <button
+              onClick={() => goToVerse(prevVerse)}
+              disabled={!prevVerse}
+              className="moss disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Previous verse"
+            >
+              ← {prevVerse ? `verse ${prevVerse}` : "previous"}
+            </button>
+            <span className="font-body text-xs uppercase tracking-[0.3em] gilt">
+              verse {idx + 1} of {verseOrder.length}
+            </span>
+            <button
+              onClick={() => goToVerse(nextVerse)}
+              disabled={!nextVerse}
+              className="moss disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Next verse"
+            >
+              {nextVerse ? `verse ${nextVerse}` : "next"} →
+            </button>
           </div>
         </div>
 
