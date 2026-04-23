@@ -21,7 +21,10 @@
       "Bash(~/.claude/skills/gstack/browse/dist/browse reload *)",
       "Bash(~/.claude/skills/gstack/browse/dist/browse wait *)",
       "Bash(~/.claude/skills/gstack/browse/dist/browse snapshot *)",
-      "Bash(~/.claude/skills/gstack/browse/dist/browse click *)"
+      "Bash(~/.claude/skills/gstack/browse/dist/browse click *)",
+      "Bash(git -c 'user.name=Hamza Bhatti' -c user.email=hbhatticr7@gmail.com commit -m ' *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse viewport *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse press *)"
     ]
   }
 }

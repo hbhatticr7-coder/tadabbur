@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { words, rootMeanings, rootOccurrences } from "../data/fatiha.js";
+import { words, rootMeanings, rootOccurrences, tafsir } from "../data/fatiha.js";
 import WordStudy from "./WordStudy.jsx";
+import ScholarlyPanel from "./ScholarlyPanel.jsx";
 
 export default function Hero({ loaded }) {
   const [activeWord, setActiveWord] = useState(2); // "ar-Raḥmān" by default
+  const [analysisOpen, setAnalysisOpen] = useState(false);
   const current = words[activeWord];
 
   return (
@@ -50,8 +52,17 @@ export default function Hero({ loaded }) {
           word={current}
           rootMeaning={rootMeanings[current.rootTr]}
           occurrences={rootOccurrences[current.rootTr]}
+          onOpenAnalysis={() => setAnalysisOpen(true)}
         />
       </div>
+
+      {analysisOpen && (
+        <ScholarlyPanel
+          word={current}
+          analysis={tafsir[current.tr]}
+          onClose={() => setAnalysisOpen(false)}
+        />
+      )}
     </section>
   );
 }

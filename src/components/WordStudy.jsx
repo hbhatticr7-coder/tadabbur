@@ -1,4 +1,4 @@
-export default function WordStudy({ word, rootMeaning, occurrences }) {
+export default function WordStudy({ word, rootMeaning, occurrences, onOpenAnalysis }) {
   return (
     <div className="lg:col-span-5 lg:pt-4">
       <div className="font-body text-xs uppercase tracking-[0.3em] gilt mb-6">Studying</div>
@@ -33,7 +33,7 @@ export default function WordStudy({ word, rootMeaning, occurrences }) {
         </ul>
       </div>
 
-      <button className="font-body text-sm moss border-b border-current pb-0.5">
+      <button onClick={onOpenAnalysis} className="font-body text-sm moss border-b border-current pb-0.5">
         Open full scholarly analysis →
       </button>
     </div>
