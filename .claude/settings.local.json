@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse goto *)",
+      "Bash(mkdir -p /tmp/tadabbur-shots)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse screenshot *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse state *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse --help)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse console *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git -C /home/hbhat/projects/tadabbur log --oneline)",
+      "Bash(git -C /home/hbhat/projects/tadabbur config user.name)",
+      "Bash(git -C /home/hbhat/projects/tadabbur config user.email)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse reload *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse wait *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse snapshot *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse click *)"
+    ]
+  }
+}
