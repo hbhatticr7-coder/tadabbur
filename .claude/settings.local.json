@@ -28,7 +28,13 @@
       "Bash(~/.claude/skills/gstack/browse/dist/browse fill *)",
       "Bash(~/.claude/skills/gstack/browse/dist/browse js *)",
       "Bash(gh auth *)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Bash(sudo -n true)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(apt list *)",
+      "Bash(gh repo *)",
+      "Bash(curl *)",
+      "Bash(git push *)"
     ]
   }
 }

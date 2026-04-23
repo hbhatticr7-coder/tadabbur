@@ -33,8 +33,8 @@ export default function Hero({ loaded }) {
       <div className={`grid lg:grid-cols-12 gap-12 items-start ${loaded ? "reveal r-3" : "opacity-0"}`}>
         <div className="lg:col-span-7">
           <div className="vellum p-10 md:p-14 relative" style={{ boxShadow: "0 1px 0 rgba(29,25,23,0.06), 0 30px 60px -30px rgba(29,25,23,0.25)" }}>
-            <div className="absolute top-4 left-4 font-body text-xs uppercase tracking-[0.3em] gilt">Al-Fātiḥa · {verse.ref}</div>
-            <div className="absolute top-4 right-4 font-body text-xs tracking-wider" style={{ color: "#7a6e5e" }}>{verse.label}</div>
+            <div className="absolute top-4 left-5 font-body text-sm uppercase tracking-[0.2em]" style={{ color: "#5a4325", fontWeight: 500 }}>Al-Fātiḥa · {verse.ref}</div>
+            <div className="absolute top-4 right-5 font-body text-sm tracking-wider italic" style={{ color: "#5a4a36" }}>{verse.label}</div>
 
             <p dir="rtl" className="font-ar text-5xl md:text-6xl leading-[1.6] text-center mt-6 mb-10 ink">
               {verse.words.map((w, i) => (
