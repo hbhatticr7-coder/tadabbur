@@ -9,13 +9,19 @@ export default function Hero({ loaded }) {
   const [analysisOpen, setAnalysisOpen] = useState(false);
 
   const verse = verses[verseId];
-  const current = verse.words[activeWord];
+  // Verses have different word counts (1:3 has 2, 1:7 has 8). Clamp the active
+  // word index so navigating from a long verse to a short one doesn't land on
+  // an out-of-bounds word and crash WordStudy.
+  const wordIndex = Math.min(activeWord, verse.words.length - 1);
+  const current = verse.words[wordIndex];
   const idx = verseOrder.indexOf(verseId);
   const prevVerse = verseOrder[idx - 1];
   const nextVerse = verseOrder[idx + 1];
 
   const goToVerse = (id) => {
-    if (id) setVerseId(id);
+    if (!id) return;
+    setVerseId(id);
+    setActiveWord((prev) => Math.min(prev, verses[id].words.length - 1));
   };
 
   return (
@@ -41,7 +47,7 @@ export default function Hero({ loaded }) {
                 <button
                   key={i}
                   onClick={() => setActiveWord(i)}
-                  data-active={activeWord === i}
+                  data-active={wordIndex === i}
                   className="word-btn px-2 py-1 rounded-sm mx-1 outline-none"
                 >
                   {w.ar}
