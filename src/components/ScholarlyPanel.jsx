@@ -39,27 +39,29 @@ export default function ScholarlyPanel({ word, analysis, onClose }) {
           </p>
         </Section>
 
-        <Section label="In the classical tafsirs">
-          <div className="space-y-6">
-            {analysis.excerpts.map((ex, i) => (
-              <article key={i} className="pl-5 border-l rule" style={{ borderLeftWidth: 2 }}>
-                <div className="font-body text-xs uppercase tracking-[0.25em] gilt mb-2">
-                  {ex.source}
-                </div>
-                <p className="font-body text-base leading-relaxed" style={{ color: "#2a2520" }}>
-                  {ex.body}
-                </p>
-                <div className="mt-2 font-body text-xs italic" style={{ color: "#7a6e5e" }}>
-                  {ex.url ? (
-                    <a href={ex.url} target="_blank" rel="noreferrer" className="link-underline">view original →</a>
-                  ) : (
-                    <span>editorial paraphrase · original text not yet linked</span>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-        </Section>
+        {analysis.excerpts && analysis.excerpts.length > 0 && (
+          <Section label="In the classical tafsirs">
+            <div className="space-y-6">
+              {analysis.excerpts.map((ex, i) => (
+                <article key={i} className="pl-5 border-l rule" style={{ borderLeftWidth: 2 }}>
+                  <div className="font-body text-xs uppercase tracking-[0.25em] gilt mb-2">
+                    {ex.source}
+                  </div>
+                  <p className="font-body text-base leading-relaxed" style={{ color: "#2a2520" }}>
+                    {ex.body}
+                  </p>
+                  <div className="mt-2 font-body text-xs italic" style={{ color: "#7a6e5e" }}>
+                    {ex.url ? (
+                      <a href={ex.url} target="_blank" rel="noreferrer" className="link-underline">view original →</a>
+                    ) : (
+                      <span>editorial paraphrase · original text not yet linked</span>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </Section>
+        )}
 
         <Section label="Lexicon">
           <div className="font-body text-xs uppercase tracking-[0.25em] gilt mb-2">

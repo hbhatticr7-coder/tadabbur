@@ -9,7 +9,7 @@ export const entries = [
   {
     id: "rahman-vs-rahim",
     tags: [
-      "rahman", "raḥmān", "rahman", "rahim", "raḥīm",
+      "rahman", "raḥmān", "rahim", "raḥīm",
       "difference", "between", "both", "versus", "vs", "compare", "same",
       "mercy", "gracious", "merciful",
     ],
@@ -100,6 +100,61 @@ export const entries = [
     sources: [
       "Ibn Kathīr · Tafsīr al-Qurʾān al-ʿAẓīm",
       "al-Qurṭubī · al-Jāmiʿ li-Aḥkām al-Qurʾān",
+      "Lane · Arabic-English Lexicon",
+    ],
+  },
+  {
+    id: "yawm-al-din",
+    tags: [
+      "dīn", "din", "yawm", "day", "judgment", "recompense",
+      "yawm al-din", "day of judgment", "day of recompense",
+      "what does dīn mean", "meaning",
+    ],
+    question: "What does 'Day of the dīn' mean in 1:4?",
+    answer: "The word dīn covers a remarkable range in classical Arabic: obedience, submission, a binding obligation, a debt, the recompense owed for an action, and — by extension — the whole system of practice we translate 'religion.' When the verse names a 'day of the dīn,' all of these threads converge. It is the day on which what is owed is settled: obligations reckoned, debts paid, actions weighed against their deserved response. Most classical tafsirs read 1:4 as 'the Day of Recompense' for this reason.",
+    sources: [
+      "Lane · Arabic-English Lexicon",
+    ],
+  },
+  {
+    id: "iyyaka-pivot",
+    tags: [
+      "iyyāka", "iyyaka", "you alone", "we worship",
+      "pivot", "shift", "turn", "address", "direct",
+      "why switch", "third person", "second person",
+      "naʿbudu", "nasta'in",
+    ],
+    question: "Why does the surah suddenly switch from speaking about Allah to speaking to Him at 1:5?",
+    answer: "The first four verses speak about Allah in the third person — 'All praise belongs to Him… Master of the Day of Judgment.' Starting at 1:5, the address turns: 'You alone we worship, and You alone we ask for help.' Classical grammarians call this iltifāt — a deliberate turn of address. The construction iyyāka naʿbudu is itself a particle of specification that fronts the pronoun for exclusivity: not 'we worship you' but 'it is You, and You alone, that we worship.' The surah rehearses the believer's journey: first we speak about Allah (praise), then we turn and speak to Him (worship and request).",
+    sources: [
+      "Lane · Arabic-English Lexicon",
+    ],
+  },
+  {
+    id: "straight-path",
+    tags: [
+      "ṣirāṭ", "sirat", "path", "way", "road",
+      "straight path", "mustaqīm", "mustaqim",
+      "what is the straight path", "1:6", "guidance",
+      "hidāya", "hidaya",
+    ],
+    question: "What is 'the straight path' (aṣ-ṣirāṭ al-mustaqīm) asked for in 1:6?",
+    answer: "In classical Arabic, ṣirāṭ names a particular kind of road: wide, plain, already cleared — the kind you can see from a distance and cannot lose by mistake. It is distinguished from ṭarīq (a way, possibly narrow or winding) and sabīl (a means, a channel). Mustaqīm, from the root q-w-m ('to stand upright'), names something that has been made straight and stays that way — not a path that happens to run straight today but the path whose straightness is constitutive. The prayer is for guidance to the road that does not require interpretation to find, and that does not bend back. Verse 1:7 then specifies whose road it is: 'the path of those whom You have favored.'",
+    sources: [
+      "Lane · Arabic-English Lexicon",
+    ],
+  },
+  {
+    id: "three-groups",
+    tags: [
+      "three groups", "favored", "wrath", "astray",
+      "maghḍūb", "maghdub", "ḍāllīn", "dallin",
+      "1:7", "who are they", "last verse", "ending",
+      "anger", "wrath", "straying", "lost",
+    ],
+    question: "Who are the three groups contrasted in the final verse of al-Fātiḥa (1:7)?",
+    answer: "The closing verse names three groups and asks to be placed on the road of the first while avoiding the other two. The favored (alladhīna anʿamta ʿalayhim) are those upon whom Allah has placed His niʿma — His freely given blessing; classical tafsirs cross-reference this with 4:69, which names the favored as the prophets, the truthful, the martyrs, and the righteous. The second group, al-maghḍūb ʿalayhim, is in the passive voice: 'those upon whom anger has been placed' — the failure is active, something done that incurred divine displeasure. The third, aḍ-ḍāllīn, is the active participle of ḍalla ('to stray'): those who have lost the way. The surah closes by distinguishing two kinds of moral failure — one of commission, one of direction — and prays to be kept from both.",
+    sources: [
       "Lane · Arabic-English Lexicon",
     ],
   },

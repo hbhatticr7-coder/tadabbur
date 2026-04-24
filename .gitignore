@@ -9,3 +9,6 @@ dist
 
 # gstack session artifacts
 .gstack/
+
+# reference PDFs (copyrighted scholarly material used locally, never shipped)
+references/*.pdf
