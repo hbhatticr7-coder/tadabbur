@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 html, body, #root { height: 100%; }
+html { scroll-behavior: smooth; } /* anchor nav scrolls smoothly instead of jumping */
 body { margin: 0; }
 
 .font-display { font-family: 'Fraunces', serif; font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0; }

@@ -18,10 +18,10 @@ export default function App() {
     <div className="min-h-screen" style={{ background: "#F3EADB", color: "#1D1917" }}>
       <div className="grain absolute inset-0 pointer-events-none opacity-70" />
       <Nav />
-      <Hero loaded={loaded} />
-      <Ask />
-      <Paths />
-      <Closing />
+      <div id="verse"><Hero loaded={loaded} /></div>
+      <div id="ask"><Ask /></div>
+      <div id="paths"><Paths /></div>
+      <div id="about"><Closing /></div>
       <Footer />
     </div>
   );
