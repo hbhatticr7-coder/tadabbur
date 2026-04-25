@@ -38,9 +38,21 @@ export default function Paths() {
           </div>
         </div>
 
+        {/*
+          Each path card is an anchor to #verse — the reading panel is the
+          single entry point until distinct path modes (Reader / Student /
+          Seeker) are actually built. The card-as-anchor preserves the
+          "click here to begin" affordance without lying about behavior:
+          all three paths land you at the same place for now.
+        */}
         <div className="grid md:grid-cols-3 gap-px vellum">
           {paths.map((c, i) => (
-            <div key={i} className="chapter-link paper p-10 cursor-pointer group">
+            <a
+              key={i}
+              href="#verse"
+              className="chapter-link paper p-10 cursor-pointer group block"
+              aria-label={`Begin ${c.title}: scroll to the verse card`}
+            >
               <div className="flex items-baseline justify-between mb-8">
                 <span className="chapter-num font-display text-6xl transition-colors" style={{ fontWeight: 300, color: "#D4C6A8" }}>
                   {c.num}
@@ -55,7 +67,7 @@ export default function Paths() {
                 <span className="font-body text-xs uppercase tracking-wider gilt">{c.tag}</span>
                 <span className="font-body text-sm moss">begin →</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
