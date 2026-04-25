@@ -12,6 +12,10 @@ export default function ScholarlyPanel({ word, analysis, onClose }) {
     };
   }, [onClose]);
 
+  // Defensive: an unexpected state could leave word undefined while the
+  // overlay is open. Bail rather than crash the whole page.
+  if (!word) return null;
+
   if (!analysis) {
     return (
       <Backdrop onClose={onClose}>
@@ -63,14 +67,16 @@ export default function ScholarlyPanel({ word, analysis, onClose }) {
           </Section>
         )}
 
-        <Section label="Lexicon">
-          <div className="font-body text-xs uppercase tracking-[0.25em] gilt mb-2">
-            {analysis.lexicon.source}
-          </div>
-          <p className="font-body text-base leading-relaxed" style={{ color: "#2a2520" }}>
-            {analysis.lexicon.body}
-          </p>
-        </Section>
+        {analysis.lexicon && (
+          <Section label="Lexicon">
+            <div className="font-body text-xs uppercase tracking-[0.25em] gilt mb-2">
+              {analysis.lexicon.source}
+            </div>
+            <p className="font-body text-base leading-relaxed" style={{ color: "#2a2520" }}>
+              {analysis.lexicon.body}
+            </p>
+          </Section>
+        )}
 
         <footer className="mt-10 pt-6 border-t rule font-body text-xs italic" style={{ borderTopWidth: 1, color: "#7a6e5e" }}>
           Excerpts on this page are editorial paraphrases of positions attributed to each scholar in the cited work — not verbatim translations. Where the original is not yet linked, we say so plainly.

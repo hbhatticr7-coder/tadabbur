@@ -1,4 +1,9 @@
 export default function WordStudy({ word, rootMeaning, occurrences, onOpenAnalysis }) {
+  // Defensive: if something upstream passed an undefined word, render nothing
+  // rather than crash. Clamping in Hero should prevent this; this is belt
+  // and suspenders in case of an unexpected state transition.
+  if (!word) return null;
+
   const rootMeaningText = rootMeaning || "meaning not yet recorded";
   const hasOccurrences = Array.isArray(occurrences) && occurrences.length > 0;
 

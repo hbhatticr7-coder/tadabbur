@@ -9,7 +9,19 @@ body { margin: 0; }
 
 .font-display { font-family: 'Fraunces', serif; font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0; }
 .font-body { font-family: 'EB Garamond', serif; }
-.font-ar { font-family: 'Amiri', serif; }
+
+/*
+  Amiri handles full tashkīl (diacritics above and below letters) well, but
+  needs room. Line-height 1.85 keeps marks on adjacent lines from colliding
+  when a long verse wraps. The feature flags turn on standard ligatures,
+  contextual alternates, and kerning — Amiri uses these to place shadda +
+  fatḥa/kasra stacks cleanly instead of overlapping them.
+*/
+.font-ar {
+  font-family: 'Amiri', serif;
+  line-height: 1.85;
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+}
 
 .ink { color: #1D1917; }
 .moss { color: #1B3A2E; }

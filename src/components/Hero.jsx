@@ -42,7 +42,7 @@ export default function Hero({ loaded }) {
             <div className="absolute top-4 left-5 font-body text-sm uppercase tracking-[0.2em]" style={{ color: "#5a4325", fontWeight: 500 }}>Al-Fātiḥa · {verse.ref}</div>
             <div className="absolute top-4 right-5 font-body text-sm tracking-wider italic" style={{ color: "#5a4a36" }}>{verse.label}</div>
 
-            <p dir="rtl" className="font-ar text-5xl md:text-6xl leading-[1.6] text-center mt-6 mb-10 ink">
+            <p dir="rtl" className="font-ar text-5xl md:text-6xl text-center mt-6 mb-10 ink">
               {verse.words.map((w, i) => (
                 <button
                   key={i}
