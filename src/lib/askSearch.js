@@ -15,7 +15,10 @@ function tokenize(text) {
     .normalize("NFD")                  // strip Arabic/Latin diacritics
     .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9\s-]/g, " ")
-    .split(/\s+/)
+    // Split on hyphens too: "ar-rahman", "al-fatiha", "yawm-al-din" should
+    // tokenize the same as their unprefixed forms so users typing the natural
+    // hyphenated transliteration still match tags like "rahman" or "din".
+    .split(/[\s-]+/)
     .filter((t) => t && !STOPWORDS.has(t));
 }
 
